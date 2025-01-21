@@ -29,6 +29,10 @@
             #content {
                 display: none
             }
+
+            .webringenabled {
+                display: none
+            }
         </style>
     </noscript>
 
@@ -68,7 +72,13 @@
                     <a href="" id="dknhttp">dknhttp</a><br><br>
 
                     <strong>services</strong><br>
-                    <a href="" id="grades">grades</a>
+                    <a href="" id="grades">grades</a><br><br>
+
+                    <div class="webringenabled">
+                        <strong>webring</strong><br>
+                        <a href="" id="wrprev">prev site</a><br>
+                        <a href="" id="wrnext">next site</a><br>
+                    </div>
                 </div>
             </div>
             <div class="mobile">
@@ -85,7 +95,13 @@
                     <a href="" id="dknhttp">dknhttp</a><br><br>
 
                     <strong>services</strong><br>
-                    <a href="" id="grades">grades</a>
+                    <a href="" id="grades">grades</a><br><br>
+
+                    <div class="webringenabled">
+                        <strong>webring</strong><br>
+                        <a href="" id="wrprev">prev site</a><br>
+                        <a href="" id="wrnext">next site</a><br>
+                    </div>
                 </div>
                 <span class="user-select-none" id="mobilenicknamechange" style="font-size: 60px">dttric</span><br>
                 <span class="user-select-none" style="color:rgb(102, 102, 102); font-size: 14px">imagine/code/push!</span>
@@ -100,17 +116,33 @@
     </div>
     <!-- ссылки на кнопки -->
     <script>
-        let github = "https://github.com/dttric"
-        let calculex = "/calculex"
-        let ayarei = "/ayarei_engine"
-        let dknhttp = "/dknhttp"
-        let grades = "https://grades.del.pw"
-        let del = "https://del.pw/"
-        $("#ayarei").attr("href", github + ayarei)
-        $("#dknhttp").attr("href", github + dknhttp)
-        $("#calculex").attr("href", github + calculex)
-        $("#grades").attr("href", grades)
-        $("#delpw").attr("href", del)
+        let links = {
+            github: "https://github.com/dttric",
+            calculex: "/calculex",
+            ayarei: "/ayarei_engine",
+            dknhttp: "/dknhttp",
+            grades: "https://grades.del.pw",
+            del: "https://del.pw/",
+            dttric: "http://dttric.del.pw",
+            wrprev: "https://webring.furryporno.ru/silent/prev",
+            wrnext: "https://webring.furryporno.ru/silent/next"
+        };
+
+        $("#ayarei").attr("href", links.github + links.ayarei);
+        $("#dknhttp").attr("href", links.github + links.dknhttp);
+        $("#calculex").attr("href", links.github + links.calculex);
+        $("#grades").attr("href", links.grades);
+        $("#delpw").attr("href", links.del);
+        $("#dttric").attr("href", links.dttric);
+        $("#wrprev").attr("href", links.wrprev);
+        $("#wrnext").attr("href", links.wrnext);
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const isWebring = urlParams.get('webring') === 'true';
+    
+        if (isWebring) {
+            document.getElementsByClassName('webringenabled').style.display = 'block';
+        }
     </script>
 </body>
 </html>
