@@ -31,7 +31,7 @@
             }
 
             .webringenabled {
-                display: none
+                display: none !important
             }
         </style>
     </noscript>
@@ -136,13 +136,8 @@
         $("#dttric").attr("href", links.dttric);
         $("#wrprev").attr("href", links.wrprev);
         $("#wrnext").attr("href", links.wrnext);
-
-        const urlParams = new URLSearchParams(window.location.search);
-        const isWebring = urlParams.get('webring') === 'true';
     
-        if (isWebring) {
-            document.getElementsByClassName('webringenabled').style.display = 'block';
-        }
+        document.getElementsByClassName('webringenabled').style.display = 'none';
     </script>
 </body>
 </html>
