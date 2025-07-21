@@ -1,20 +1,20 @@
-const typingText = document.querySelector('.typing');
-const contentElement = document.querySelector('.content');
-let fullText = contentElement.textContent; // Получаем текст с учетом переходов на новую строку
+let nameIndex = 0;
+let mobilenameIndex = 0;
+let nicknames = ["dttric", "cайлент", "toadtg"];
 
-// Остальной код остается прежним
-let textIndex = 0;
-const cursorSymbol = '|';
-
-function type() {
-  typingText.textContent = fullText.slice(0, textIndex) + cursorSymbol;
-  textIndex++;
-
-  if (textIndex > fullText.length) {
-    textIndex = 0;
-  }
-
-  setTimeout(type, 50);
+function changeNameAutomatically() {
+    $("#nicknamechange").fadeOut(500, function() {
+        $(this).text(nicknames[nameIndex]).fadeIn(500);
+    });
+    nameIndex = (nameIndex + 1) % nicknames.length;
 }
 
-type()
+function changemobileNameAutomatically() {
+    $("#mobilenicknamechange").fadeOut(500, function() {
+        $(this).text(nicknames[mobilenameIndex]).fadeIn(500);
+    });
+    mobilenameIndex = (mobilenameIndex + 1) % nicknames.length;
+}
+
+setInterval(changemobileNameAutomatically, 1700);
+setInterval(changeNameAutomatically, 1700);
