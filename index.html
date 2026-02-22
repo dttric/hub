@@ -283,28 +283,26 @@
         </div>
     </div>
     <script>
-        // Список видео из папки gifs
         const mediaList = [
-            'gifs/animation.gif.mp4',
-            'gifs/creation-of-adam-cat.mp4',
-            'gifs/doc_2026-02-22_14-22-40.mp4',
-            'gifs/doc_2026-02-22_14-23-00.mp4',
-            'gifs/думайте-поздняков.mp4'
+        'gifs/animation.gif.mp4',
+        'gifs/creation-of-adam-cat.mp4',
+        'gifs/doc_2026-02-22_14-22-40.mp4',
+        'gifs/doc_2026-02-22_14-23-00.mp4',
+        'gifs/думайте-поздняков.mp4'
         ];
 
         function loadAllMedia() {
             const container = $('#gif-container');
-            
-            // Создаем элементы для каждого видео
             mediaList.forEach((video, index) => {
-                const videoEl = $('<div class="video-element video-' + (index + 1) + '"><video autoplay muted loop><source src="' + video + '" type="video/mp4"></video></div>');
+                const videoEl = $('<div class="video-element video-' + (index + 1) + '"><video autoplay muted loop playsinline><source src="' + video + '" type="video/mp4"></video></div>');
                 container.append(videoEl);
             });
         }
 
-        // Загружаем когда страница готова
         $(document).ready(function() {
-            loadAllMedia();
+            if (window.innerWidth > 991) {
+                loadAllMedia();
+            }
         });
     </script>
 
