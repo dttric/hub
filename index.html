@@ -43,6 +43,9 @@
         body {
             overflow: auto;
         }
+        .no-select {
+            user-select: none;
+        }
         #animated-bg {
             display: none;
             position: fixed;
@@ -260,7 +263,7 @@
 
     <div id="animated-bg"></div>
 
-    <div class="container" id="content">
+    <div class="container" id="no-select content">
         <div id="gif-container"></div>
         <div id="mainpart">
             <div class="linksSidebar lh-lg font-monospace">
