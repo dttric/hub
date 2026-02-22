@@ -114,8 +114,25 @@
             font-size: 60px;
             user-select: none;
         }
-        @media screen and (min-width: 991px) {
-            #animated-bg {
+
+        
+        #gif-container {
+        display: none;
+    }
+
+    @media screen and (min-width: 991px) {
+            #gif-container {
+                display: flex;
+                position: fixed;
+                width: calc(100% - 280px);
+                height: 100%;
+                z-index: 0;
+                left: 280px;
+                top: 0;
+                pointer-events: none;
+                overflow: hidden;
+            }
+                #animated-bg {
                 display: block;
             }
             body {
