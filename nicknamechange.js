@@ -1,5 +1,5 @@
 let nameIndex = 0;
-let nicknames = ["dttric", "cайлент", "toadtg"];
+let nicknames = ["dttric", "cайлент", "лягушка"];
 
 function changeNameAutomatically() {
     $("#nicknamechange").fadeOut(500, function() {
